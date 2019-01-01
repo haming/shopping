@@ -1,0 +1,19 @@
+{
+  "name": "webpackdomo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config=build/webpack.dev.js",
+    "server": "webpack-dev-server --config=build/webpack.dev.js",
+    "start": "webpack-dev-server --config ./build/webpack.dev.js --host 0.0.0.0 --port 8052"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "style-loader": "^0.23.1"
+  }
+}
