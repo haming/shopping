@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "eruda": "^1.5.4",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "vue": "^2.5.21"
   }
 }

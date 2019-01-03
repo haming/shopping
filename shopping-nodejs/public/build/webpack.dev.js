@@ -6,9 +6,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const minicCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 module.exports = {
     entry: { //  入口文件
-        main: './src/shoppingM/index/index.js',
+        index: './src/shoppingM/index/index.js',
         test: './src/test/index.js',
     },
     output: { //出口文件
@@ -71,14 +72,14 @@ module.exports = {
         // new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
             filename: 'index.html',	//生成的html存放路径，相对于 path
-            chunks: ['main'],
+            chunks: ['index','common.js'],
             template: './src/shoppingM/index/index.html',	//html模板路径
             inject: true,	//允许插件修改哪些内容，包括head与body
             hash: true	//为静态资源生成hash值
         }),
         new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
             filename: 'test.html',	//生成的html存放路径，相对于 path
-            chunks: ['test'],
+            chunks: ['test','common.js'],
             template: './src/test/index.html',	//html模板路径
             inject: true,	//允许插件修改哪些内容，包括head与body
             hash: true	//为静态资源生成hash值
@@ -88,6 +89,18 @@ module.exports = {
             chunkFilename: "[id].css"
         })
     ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: 'common.js',
+                    chunks: 'initial',
+                    minChunks: 2
+                }
+            }
+        }
+    },
+
     //loader 转换器
     loader: {},
     // 服务器配置

@@ -56,7 +56,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"test": 0
+/******/ 		"index": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -147,32 +147,32 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./src/test/index.js","common"]);
+/******/ 	deferredModules.push(["./src/shoppingM/index/index.js","common"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/test/index.css":
-/*!****************************!*\
-  !*** ./src/test/index.css ***!
-  \****************************/
+/***/ "./src/shoppingM/index/index.css":
+/*!***************************************!*\
+  !*** ./src/shoppingM/index/index.css ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/test/index.css?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/shoppingM/index/index.css?");
 
 /***/ }),
 
-/***/ "./src/test/index.js":
-/*!***************************!*\
-  !*** ./src/test/index.js ***!
-  \***************************/
+/***/ "./src/shoppingM/index/index.js":
+/*!**************************************!*\
+  !*** ./src/shoppingM/index/index.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/**\n * Created by haoming on 2019/1/1.\n */\n__webpack_require__(/*! ./index.css */ \"./src/test/index.css\");\n__webpack_require__(/*! ../common/common */ \"./src/common/common.js\");\n\nconsole.log(123123)\n\n//# sourceURL=webpack:///./src/test/index.js?");
+eval("/**\n * Created by haoming on 2019/1/1.\n */\n__webpack_require__(/*! ../../common/common */ \"./src/common/common.js\");\n__webpack_require__(/*! ./index.css */ \"./src/shoppingM/index/index.css\");\n\n\n\nnew Vue({\n    el: '#app',\n    data: {\n        message: 'Hello Vue!'\n    }\n})\n\n//# sourceURL=webpack:///./src/shoppingM/index/index.js?");
 
 /***/ })
 
